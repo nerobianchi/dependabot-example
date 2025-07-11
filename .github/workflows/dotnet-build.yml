@@ -26,3 +26,8 @@ jobs:
 
       - name: Run tests
         run: dotnet test --no-build --verbosity normal || echo "No tests found"
+
+      - name: Run Dependabot (GitHub Actions)
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
